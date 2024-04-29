@@ -1,4 +1,5 @@
 const images = document.querySelectorAll('.image');
+const card = document.getElementById('cardOne'); // Selecionando o card com o ID 'cardOne'
 
 const positions = [
     { top: '100px', left: '45px' },
@@ -10,6 +11,7 @@ const positions = [
 ];
 
 let currentIndex = 0;
+let animationInterval;
 
 function changePositions() {
     images.forEach((image, index) => {
@@ -21,7 +23,12 @@ function changePositions() {
 }
 
 function startAnimation() {
-    setInterval(changePositions, 3000);
+    animationInterval = setInterval(changePositions, 1500);
 }
 
-document.addEventListener('DOMContentLoaded', startAnimation);
+function stopAnimation() {
+    clearInterval(animationInterval);
+}
+
+card.addEventListener('mouseover', startAnimation);
+card.addEventListener('mouseout', stopAnimation);
