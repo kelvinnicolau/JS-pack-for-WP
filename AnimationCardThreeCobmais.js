@@ -43,7 +43,7 @@ function changeSvgThree() {
             imgTwo.style.fill = '#19283F';
             logoTwo.style.fill = '#D9D9D9';
         } else if (i === 3) {
-            lineOne.style.stroke = '#19283F';
+            lineOne.style.stroke = '#314665';
             imgTwo.style.fill = '#00EDFF';
             imgTwo.style.stroke = '#00EDFF';
             logoTwo.style.fill = '#0F1825';
@@ -56,7 +56,7 @@ function changeSvgThree() {
             imgThree.style.stroke = '#19283F';
             logoThree.style.fill = '#D9D9D9';
         } else if (i === 5) {
-            lineTwo.style.stroke = '#0F1825';
+            lineTwo.style.stroke = '#314665';
             imgThree.style.fill = '#00EDFF';
             imgThree.style.stroke = '#00EDFF';
             logoThree.style.fill = '#0F1825';
@@ -66,12 +66,12 @@ function changeSvgThree() {
             logoThree.style.fill = '#D9D9D9';
             lineThree.style.stroke = '#00EDFF';
         } else if (i === 7) {
-            lineThree.style.stroke = '#0F1825';
             btnAnimationThree.style.fill = '#00EDFF';
             btnText.style.fill = '#0F1825';
+            lineThree.style.stroke = '#314665';
 
             clearInterval(interval); // Limpa o intervalo quando todas as fases forem concluídas
-            setTimeout(startAnimationTwo, 1000); // Reinicia a animação
+            setTimeout(startAnimationThree, 1000); // Reinicia a animação
         }
         i++;
     }, 1000); // Atraso de 1 segundo entre cada fase
