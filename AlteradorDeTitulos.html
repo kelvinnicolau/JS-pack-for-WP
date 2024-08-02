@@ -1,0 +1,80 @@
+<div class="custom-animation-container">
+    <h3 class="custom-heading">Ganhe <b>escalabilidade</b> no contato com inadimplentes
+    </h3>
+
+    <h3 class="custom-heading">Aumente a <b>taxa de sucesso</b> na recuperação de dívidas
+    </h3>
+
+    <h3 class="custom-heading"><b>Reduza custos</b> da sua operação de cobranças
+    </h3>
+
+    <h3 class="custom-heading">Tenha <b>processos automatizados</b> e ganhe mais tempo
+    </h3>
+
+</div>
+
+<script>
+
+    // Código para animar troca de títulos de um mesmo local, os títulos vão ficar passando um por um.
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const headings = document.querySelectorAll(".custom-heading");
+        let currentIndex = 0;
+
+        function changeHeading() {
+            headings[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + 1) % headings.length;
+            headings[currentIndex].classList.add("active");
+        }
+
+        headings[currentIndex].classList.add("active");
+        setInterval(changeHeading, 2000);
+    });
+
+</script>
+
+<style>
+    .custom-animation-container {
+        position: relative;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        width: 850px;
+        text-align: center;
+    }
+
+    .custom-heading {
+        position: absolute;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.3s linear;
+        color: #FFFFFF;
+        font-weight: 400;
+        font-size: 32px;
+        font-family: 'Space Grotesk';
+    }
+
+    .custom-heading.active {
+        position: absolute;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .custom-heading b {
+        color: #00EDFF;
+        font-weight: bold;
+    }
+
+    @media(max-width:835px) {
+        .custom-animation-container {
+            width: 380px;
+            height: 130px;
+        }
+
+        .custom-heading {
+            font-size: 24px;
+        }
+    }
+</style>

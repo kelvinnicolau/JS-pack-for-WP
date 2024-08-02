@@ -1,42 +1,70 @@
+// Altera o logo do Menu no hover das opções (APENAS NO DESKTOP)
 
 document.addEventListener('DOMContentLoaded', function () {
-    var buttonSobre = document.querySelector('#e-n-menu-title-5491 button');
-    var buttonProdutos = document.querySelector('#e-n-menu-title-5492 button');
-    var buttonConteudo = document.querySelector('#e-n-menu-title-5495 button');
-    var buttonContato = document.querySelector('#e-n-menu-title-5496 button');
+    // Função para verificar a largura da tela
+    function isMobile() {
+        return window.innerWidth <= 768; // Ajuste o valor conforme necessário para definir o breakpoint do mobile
+    }
 
-    document.addEventListener('click', function (e) {
+    // Só executa o código se não for dispositivo móvel
+    if (!isMobile()) {
+        var buttonSobre = document.querySelector('#e-n-menu-title-5491 button');
+        var buttonProdutos = document.querySelector('#e-n-menu-title-5492 button');
+        var buttonConteudo = document.querySelector('#e-n-menu-title-5494 button');
+        var buttonContato = document.querySelector('#e-n-menu-title-5495 button');
 
-        if (buttonSobre.getAttribute('aria-expanded', 'true') === 'true') {
-            const logoAzul = document.querySelector("#logoAzul");
-            const logoBranco = document.querySelector("#id-image-logo");
+        document.addEventListener('click', function (e) {
+            if (buttonSobre.getAttribute('aria-expanded') === 'true') {
+                const logoAzul = document.querySelector("#logoAzul");
+                const logoBranco = document.querySelector("#id-image-logo");
+                const buttonBlue = document.getElementById('btnBlue');
+                const buttonWhite = document.getElementById('btnWhite');
 
-            logoAzul.style.display = 'block';
-            logoBranco.style.display = 'none';
-        } else if (buttonProdutos.getAttribute('aria-expanded', 'true') === 'true') {
-            const logoAzul = document.querySelector("#logoAzul");
-            const logoBranco = document.querySelector("#id-image-logo");
-
-            logoAzul.style.display = 'block';
-            logoBranco.style.display = 'none';
-        } else if (buttonConteudo.getAttribute('aria-expanded', 'true') === 'true') {
-            const logoAzul = document.querySelector("#logoAzul");
-            const logoBranco = document.querySelector("#id-image-logo");
-
-            logoAzul.style.display = 'block';
-            logoBranco.style.display = 'none';
-        } else if (buttonContato.getAttribute('aria-expanded', 'true') === 'true') {
-            const logoAzul = document.querySelector("#logoAzul");
-            const logoBranco = document.querySelector("#id-image-logo");
-
-            logoAzul.style.display = 'block';
-            logoBranco.style.display = 'none';
-        } else {
-            const logoAzul = document.querySelector("#logoAzul");
-            const logoBranco = document.querySelector("#id-image-logo");
-
-            logoAzul.style.display = 'none';
-            logoBranco.style.display = 'block';
-        }
-    });
+                buttonWhite.classList.add('btn-active-white');
+                buttonBlue.classList.add('btn-active');
+                logoAzul.style.display = 'block';
+                logoBranco.style.display = 'none';
+            } else if (buttonProdutos.getAttribute('aria-expanded') === 'true') {
+                const logoAzul = document.querySelector("#logoAzul");
+                const logoBranco = document.querySelector("#id-image-logo");
+                const buttonBlue = document.getElementById('btnBlue');
+                const buttonWhite = document.getElementById('btnWhite');
+                
+                buttonWhite.classList.add('btn-active-white');
+                buttonBlue.classList.add('btn-active');
+                logoAzul.style.display = 'block';
+                logoBranco.style.display = 'none';
+            } else if (buttonConteudo.getAttribute('aria-expanded') === 'true') {
+                const logoAzul = document.querySelector("#logoAzul");
+                const logoBranco = document.querySelector("#id-image-logo");
+                const buttonBlue = document.getElementById('btnBlue');
+                const buttonWhite = document.getElementById('btnWhite');
+                
+                buttonWhite.classList.add('btn-active-white');
+                buttonBlue.classList.add('btn-active');
+                logoAzul.style.display = 'block';
+                logoBranco.style.display = 'none';
+            } else if (buttonContato.getAttribute('aria-expanded') === 'true') {
+                const logoAzul = document.querySelector("#logoAzul");
+                const logoBranco = document.querySelector("#id-image-logo");
+                const buttonBlue = document.getElementById('btnBlue');
+                const buttonWhite = document.getElementById('btnWhite');
+                
+                buttonWhite.classList.add('btn-active-white');
+                buttonBlue.classList.add('btn-active');
+                logoAzul.style.display = 'block';
+                logoBranco.style.display = 'none';
+            } else {
+                const logoAzul = document.querySelector("#logoAzul");
+                const logoBranco = document.querySelector("#id-image-logo");
+                const buttonBlue = document.getElementById('btnBlue');
+                const buttonWhite = document.getElementById('btnWhite');
+                
+                buttonWhite.classList.remove('btn-active-white');
+                buttonBlue.classList.remove('btn-active');
+                logoAzul.style.display = 'none';
+                logoBranco.style.display = 'block';
+            }
+        });
+    }
 });
